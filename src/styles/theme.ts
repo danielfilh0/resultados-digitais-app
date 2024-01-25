@@ -4,9 +4,9 @@ const theme = {
   },
   font: {
     family: {
-      primary: "'Nunito Sans', sans-serif",
-      secondary: "'Darker Grotesque', sans-serif",
-      tertiary: "'Red Hot Display', sans-serif"
+      primary: "'Nunito Sans',sans-serif",
+      secondary: "'Darker Grotesque',sans-serif",
+      tertiary: "'Red Hot Display',sans-serif"
     },
     regular: 400,
     bold: 700,
