@@ -35,6 +35,7 @@ const theme = {
       200: '#E1E4E8',
       300: '#CFD3D8',
       500: '#97A1AC',
+      550: '#636E7C',
       600: '#7E8A98'
     },
     white: '#FFFFFF',
