@@ -1,6 +1,6 @@
 const theme = {
   grid: {
-    container: '123rem'
+    container: '128rem'
   },
   font: {
     family: {

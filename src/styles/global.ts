@@ -19,6 +19,11 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     font-family: 'Nunito Sans', sans-serif;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `
 
 export default GlobalStyles
