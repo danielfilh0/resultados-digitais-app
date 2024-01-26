@@ -4,6 +4,9 @@ import GlobalStyles from 'styles/global'
 // @ts-expect-error-ignore
 import theme from 'styles/theme'
 import { ThemeProvider } from 'styled-components'
+import { Preview } from '@storybook/react'
+
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 export const decorators = [
   (Story) => (
@@ -13,3 +16,17 @@ export const decorators = [
     </ThemeProvider>
   )
 ]
+
+const preview: Preview = {
+  parameters: {
+    viewport: {
+      viewports: {
+        ...INITIAL_VIEWPORTS,
+        ...MINIMAL_VIEWPORTS
+      },
+      defaultViewport: 'iphone6'
+    }
+  }
+}
+
+export default preview
