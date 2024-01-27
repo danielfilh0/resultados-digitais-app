@@ -6,7 +6,7 @@ const theme = {
     family: {
       primary: "'Nunito Sans',sans-serif",
       secondary: "'Darker Grotesque',sans-serif",
-      tertiary: "'Red Hot Display',sans-serif"
+      tertiary: "'Red Hat Display',sans-serif"
     },
     regular: 400,
     bold: 700,
@@ -42,7 +42,8 @@ const theme = {
     black: '#000000',
     light: '#F1F3F5',
     error: '#f87171',
-    dark: '#212429'
+    dark: '#212429',
+    gradient: 'linear-gradient(93.82deg, #6C5AE0 -1.6%, #806EFF 105.56%);'
   },
   spacings: {
     xs: '1.6rem',
