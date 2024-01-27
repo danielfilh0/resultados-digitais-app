@@ -41,12 +41,6 @@ exports[`<Footer /> should render the footer 1`] = `
 }
 
 @media (min-width: 768px) {
-  .c2 {
-    padding: 0;
-  }
-}
-
-@media (min-width: 768px) {
   .c0 .c1 {
     gap: 1.6rem;
     justify-content: center;

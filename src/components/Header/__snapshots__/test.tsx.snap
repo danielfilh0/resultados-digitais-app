@@ -33,12 +33,6 @@ exports[`<Header /> should render the header with logo and link 1`] = `
 }
 
 @media (min-width: 768px) {
-  .c2 {
-    padding: 0;
-  }
-}
-
-@media (min-width: 768px) {
   .c3 {
     width: 147px;
     height: 36px;
