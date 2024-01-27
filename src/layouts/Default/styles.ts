@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,5 +7,9 @@ export const Wrapper = styled.div`
 `
 
 export const Main = styled.main`
-  flex: 1;
+  ${({ theme }) => css`
+    flex: 1;
+    background: ${theme.colors.gradient};
+    height: 100%;
+  `}
 `

@@ -9,6 +9,8 @@ exports[`<Default /> should render the default layout with children 1`] = `
 
 .c5 {
   flex: 1;
+  background: linear-gradient(93.82deg, #6C5AE0 -1.6%, #806EFF 105.56%);
+  height: 100%;
 }
 
 .c3 {
