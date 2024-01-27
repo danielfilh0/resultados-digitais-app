@@ -41,6 +41,7 @@ const theme = {
     white: '#FFFFFF',
     black: '#000000',
     light: '#F1F3F5',
+    error: '#f87171',
     dark: '#212429'
   },
   spacings: {
