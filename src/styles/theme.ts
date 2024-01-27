@@ -22,6 +22,7 @@ const theme = {
   },
   colors: {
     primary: {
+      200: '#D8D9FD',
       500: '#6C5AE0',
       700: '#4839A3',
       950: '#100C27'
