@@ -271,17 +271,17 @@ exports[`<Result /> should render the card download button 1`] = `
           <li
             class="c6"
           >
-            Nome e Sobrenome
+            Example Name
           </li>
           <li
             class="c6"
           >
-            (00) 0000-0000
+            emailexample@example.com
           </li>
           <li
             class="c6"
           >
-            meuemail@email.com
+            (99) 9 9999-9999
           </li>
         </ul>
       </div>
@@ -311,7 +311,8 @@ exports[`<Result /> should render the card download button 1`] = `
         </div>
       </button>
       <a
-        href="/"
+        href="https://app.rdstation.com.br/signup"
+        target="_blank"
       >
         <span>
           Fazer um teste grátis no RD Station Marketing
