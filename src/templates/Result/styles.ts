@@ -89,6 +89,8 @@ export const Result = styled.div`
   `}
 `
 
+export const Error = styled.div``
+
 export const Card = styled.div`
   ${({ theme }) => css`
     width: 100%;
