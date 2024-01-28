@@ -17,7 +17,14 @@ import { useHomeController, useHomeControllerProps } from './useHomeController'
 type HomeProps = Pick<useHomeControllerProps, 'onSubmit'>
 
 export function Home({ onSubmit }: HomeProps) {
-  const { control, register, handleSubmit, errors } = useHomeController({
+  const {
+    control,
+    phoneFormat,
+    handleChangePhone,
+    register,
+    handleSubmit,
+    errors
+  } = useHomeController({
     onSubmit
   })
 
@@ -62,9 +69,9 @@ export function Home({ onSubmit }: HomeProps) {
                     placeholder="(00) 0 0000-0000"
                     error={errors.phone?.message}
                     defaultValue={value}
-                    onChange={onChange}
+                    onChange={(e) => handleChangePhone(e, onChange)}
                     valueIsNumericString
-                    format="(##) # ####-####"
+                    format={phoneFormat}
                     patternChar="#"
                     mask=""
                   />
