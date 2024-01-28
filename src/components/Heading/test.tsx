@@ -3,6 +3,7 @@ import { screen } from '@testing-library/react'
 import { Heading } from '.'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import theme from '@/styles/theme'
+import { nunito, redHatDisplay } from '@/styles/fonts'
 
 describe('<Heading />', () => {
   it('should render a white heading by default', () => {
@@ -41,15 +42,11 @@ describe('<Heading />', () => {
     renderWithTheme(<Heading font="nunito">First Heading</Heading>)
     renderWithTheme(<Heading font="redHat">Second Heading</Heading>)
 
-    expect(screen.getByRole('heading', { name: /first heading/i })).toHaveStyle(
-      {
-        'font-family': theme.font.family.primary
-      }
+    expect(screen.getByRole('heading', { name: /first heading/i })).toHaveClass(
+      nunito.className
     )
     expect(
       screen.getByRole('heading', { name: /second heading/i })
-    ).toHaveStyle({
-      'font-family': theme.font.family.tertiary
-    })
+    ).toHaveClass(redHatDisplay.className)
   })
 })

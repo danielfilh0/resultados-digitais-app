@@ -1,6 +1,7 @@
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
 import { Metadata } from 'next'
+import { nunito } from '@/styles/fonts'
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={nunito.className}>
       <body>
         <StyledComponentsRegistry>
           <Providers>{children}</Providers>

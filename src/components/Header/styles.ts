@@ -14,8 +14,7 @@ export const Wrapper = styled.header`
     }
 
     a {
-      font-family: ${theme.font.family.secondary};
-      font-size: 1rem;
+      font-size: ${theme.font.sizes.sm};
       font-weight: ${theme.font.bold};
       color: ${theme.colors.dark};
       line-height: 1.1;
@@ -25,7 +24,7 @@ export const Wrapper = styled.header`
       `}
 
       ${media.greaterThan('medium')`
-        font-size: ${theme.font.sizes.xlg};
+        font-size: ${theme.font.sizes.lg};
       `}
     }
   `}

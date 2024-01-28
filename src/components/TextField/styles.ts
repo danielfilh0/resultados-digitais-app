@@ -70,7 +70,7 @@ export const ErrorText = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.sm};
     line-height: ${theme.font.sizes.sm};
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.medium};
     color: ${theme.colors.error};
   `}
 `

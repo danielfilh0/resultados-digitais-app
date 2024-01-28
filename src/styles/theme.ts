@@ -3,11 +3,6 @@ const theme = {
     container: '128rem'
   },
   font: {
-    family: {
-      primary: "'Nunito Sans',sans-serif",
-      secondary: "'Darker Grotesque',sans-serif",
-      tertiary: "'Red Hat Display',sans-serif"
-    },
     regular: 400,
     bold: 700,
     extrabold: 800,
