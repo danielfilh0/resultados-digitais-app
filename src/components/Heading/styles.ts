@@ -1,9 +1,9 @@
 import styled, { DefaultTheme, css } from 'styled-components'
+import media from 'styled-media-query'
 
 export type WrapperProps = {
   $color: 'white' | 'dark'
   $size: 'small' | 'medium' | 'large'
-  $font: 'nunito' | 'redHat'
   $align: 'left' | 'center'
 }
 
@@ -15,22 +15,19 @@ const wrapperModifiers = {
     font-size: ${theme.font.sizes.xlg};
   `,
   large: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes['2xlg']};
-  `,
-  nunito: (theme: DefaultTheme) => css`
-    font-family: ${theme.font.family.primary};
-  `,
-  redHat: (theme: DefaultTheme) => css`
-    font-family: ${theme.font.family.tertiary};
+    font-size: ${theme.font.sizes['xlg']};
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes['2xlg']};
+    `}
   `
 }
 
 export const Wrapper = styled.h1<WrapperProps>`
-  ${({ theme, $color, $font, $size, $align }) => css`
+  ${({ theme, $color, $size, $align }) => css`
     color: ${theme.colors[$color!]};
     text-align: ${$align};
 
     ${!!$size && wrapperModifiers[$size](theme)};
-    ${!!$font && wrapperModifiers[$font](theme)};
   `}
 `

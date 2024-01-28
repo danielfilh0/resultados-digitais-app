@@ -26,18 +26,22 @@ export const Header = styled.header`
       width: 100%;
       line-height: 2.8rem;
       text-align: center;
+
+      ${media.lessThan('medium')`
+        font-size: ${theme.font.sizes.md};
+      `}
     }
   `}
 `
 
-export const Main = styled.main`
+export const Main = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: ${theme.spacings.lg};
 
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('large')`
       flex-direction: row;
       justify-content: space-between;
       align-items: initial;

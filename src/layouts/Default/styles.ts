@@ -10,6 +10,5 @@ export const Main = styled.main`
   ${({ theme }) => css`
     flex: 1;
     background: ${theme.colors.gradient};
-    height: 100%;
   `}
 `
