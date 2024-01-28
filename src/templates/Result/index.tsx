@@ -27,6 +27,7 @@ export function Result(props: ResultProps) {
           width={455}
           height={335}
           alt="Imagem cartoom de um homem criando um quadro de pintura, fazendo uma analogia à criação de um cartão de visita"
+          priority
         />
         {success ? (
           <S.Result>

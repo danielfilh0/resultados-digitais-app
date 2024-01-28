@@ -39,6 +39,7 @@ export function Home({ onSubmit }: HomeProps) {
             width={471}
             height={347}
             alt="Imagem cartoom de um homem criando um quadro de pintura, fazendo a analogia à criação de um cartão de visita"
+            priority
           />
           <S.Form onSubmit={handleSubmit}>
             <S.FieldsWrapper>
