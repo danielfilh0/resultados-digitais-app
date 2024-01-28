@@ -1,16 +1,26 @@
 'use client'
 
+import Image from 'next/image'
+import { Controller } from 'react-hook-form'
+import { PatternFormat } from 'react-number-format'
 import { Heading } from '@/components/Heading'
+import Link from 'next/link'
+
 import * as S from './styles'
 import { Container } from '@/components/Container'
 import { Text } from '@/components/Text'
-import Image from 'next/image'
 import { TextField } from '@/components/TextField'
 import { Button } from '@/components/Button'
 import { ArrowIcon } from '@/components/ArrowIcon'
-import Link from 'next/link'
+import { useHomeController, useHomeControllerProps } from './useHomeController'
 
-export function Home() {
+type HomeProps = Pick<useHomeControllerProps, 'onSubmit'>
+
+export function Home({ onSubmit }: HomeProps) {
+  const { control, register, handleSubmit, errors } = useHomeController({
+    onSubmit
+  })
+
   return (
     <S.Wrapper>
       <Container>
@@ -30,20 +40,42 @@ export function Home() {
             height={347}
             alt="Imagem cartoom de um homem criando um quadro de pintura, fazendo a analogia à criação de um cartão de visita"
           />
-          <S.Form>
+          <S.Form onSubmit={handleSubmit}>
             <S.FieldsWrapper>
-              <TextField label="Nome*" id="name" />
               <TextField
-                label="Telefone*"
-                id="phone"
-                type="number"
-                placeholder="(00) 0 0000-000"
+                label="Nome*"
+                error={errors.name?.message}
+                id="name"
+                {...register('name')}
+              />
+              <Controller
+                control={control}
+                name="phone"
+                defaultValue=""
+                render={({ field: { onChange, value } }) => (
+                  <PatternFormat
+                    customInput={TextField}
+                    id="phone"
+                    type="text"
+                    label="Telefone*"
+                    placeholder="(00) 0 0000-0000"
+                    error={errors.phone?.message}
+                    defaultValue={value}
+                    onChange={onChange}
+                    valueIsNumericString
+                    format="(##) # ####-####"
+                    patternChar="#"
+                    mask=""
+                  />
+                )}
               />
               <TextField
                 label="E-mail*"
                 id="email"
                 type="email"
                 placeholder="nome@email.com"
+                error={errors.email?.message}
+                {...register('email')}
               />
             </S.FieldsWrapper>
             <S.Warnings>
