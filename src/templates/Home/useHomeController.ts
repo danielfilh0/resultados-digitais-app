@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import { FormSchemaData, formSchema } from '@/utils/form-schema'
+import { useCallback, useState } from 'react'
 
 export type useHomeControllerProps = {
   onSubmit?: (data: FormSchemaData) => void
@@ -19,6 +21,23 @@ export function useHomeController({ onSubmit }: useHomeControllerProps) {
   } = useForm<FormSchemaData>({
     resolver: zodResolver(formSchema)
   })
+  const [phoneFormat, setPhoneFormat] = useState('(##) ####-####')
+
+  const handleChangePhone = useCallback(
+    (
+      e: React.ChangeEvent<HTMLInputElement>,
+      callback: (...event: any[]) => void
+    ) => {
+      const phoneLength = e.target.value.replace(/\s/g, '').length
+      if (phoneLength > 13) {
+        setPhoneFormat('(##) # ####-####')
+      } else if (phoneLength === 13) {
+        setPhoneFormat('(##) ####-#####')
+      }
+      callback(e)
+    },
+    [setPhoneFormat]
+  )
 
   const handleSubmit = hookFormSubmit(async (data) => {
     if (onSubmit) onSubmit(data)
@@ -37,6 +56,8 @@ export function useHomeController({ onSubmit }: useHomeControllerProps) {
     control,
     register,
     errors,
-    handleSubmit
+    handleSubmit,
+    phoneFormat,
+    handleChangePhone
   }
 }

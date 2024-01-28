@@ -3,10 +3,7 @@ import { z } from 'zod'
 export const formSchema = z.object({
   name: z.string().min(2, 'O nome deve ter pelo menos 2 caracteres'),
   email: z.string().min(1, 'E-mail é obrigatório').email('E-mail não é válido'),
-  phone: z
-    .string()
-    .length(16, 'Telefone inválido')
-    .transform((val) => val.trim())
+  phone: z.string().min(14, 'Telefone inválido')
 })
 
 export type FormSchemaData = z.infer<typeof formSchema> & {
