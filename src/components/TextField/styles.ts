@@ -12,6 +12,10 @@ export const Wrapper = styled.div<WrapperProps>`
     flex-direction: column;
     gap: 1.2rem;
 
+    &:hover ${Input} {
+      background-color: ${theme.colors.light};
+    }
+
     ${$error &&
     css`
       ${Input} {
@@ -59,6 +63,11 @@ export const Input = styled.input`
     border: 1px solid transparent;
     background-color: ${theme.colors.white};
     color: ${theme.colors.dark};
+    transition: background-color 0.2s;
+
+    &:focus {
+      background-color: ${theme.colors.light};
+    }
 
     &::placeholder {
       color: ${theme.colors.gray[550]};

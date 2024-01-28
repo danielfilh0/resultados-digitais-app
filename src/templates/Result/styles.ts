@@ -58,6 +58,12 @@ export const Result = styled.div`
       &:first-of-type {
         width: max-content;
         font-size: ${theme.font.sizes.sm};
+        transition: color 0.2s;
+
+        &:hover span {
+          color: ${theme.colors.light};
+          text-decoration: underline;
+        }
 
         ${media.greaterThan('large')`
           font-size: ${theme.font.sizes.lg};

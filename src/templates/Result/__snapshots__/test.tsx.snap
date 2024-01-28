@@ -80,6 +80,12 @@ exports[`<Result /> should render the card download button 1`] = `
 .c3 a:first-of-type {
   width: max-content;
   font-size: 1.4rem;
+  transition: color 0.2s;
+}
+
+.c3 a:first-of-type:hover span {
+  color: #F1F3F5;
+  text-decoration: underline;
 }
 
 .c3 a:last-of-type {
@@ -248,7 +254,9 @@ exports[`<Result /> should render the card download button 1`] = `
             d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
           />
         </svg>
-        Gerar outro cartão
+        <span>
+          Gerar outro cartão
+        </span>
       </a>
       <div
         class="c4"

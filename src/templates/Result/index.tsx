@@ -33,7 +33,7 @@ export function Result(props: ResultProps) {
           <S.Result>
             <Link href="/">
               <CaretLeft />
-              Gerar outro cartão
+              <span>Gerar outro cartão</span>
             </Link>
 
             <S.Card>
